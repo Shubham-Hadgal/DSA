@@ -72,10 +72,10 @@ class Stacks<T> {
 
     // method to print stack
     void printStack() {
-        DNode<T> temp = dll.getHead();
+        DNode<T> temp = dll.getTail();
         while(temp != null) {
             System.out.print(temp.data+" ");
-            temp = temp.next;
+            temp = temp.prev;
         }
         System.out.println();
     }
