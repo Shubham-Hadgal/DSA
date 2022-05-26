@@ -21,11 +21,19 @@ class Queues<T> {
         list.removeFirst();
     }
 
-    public T peek() {
+    public T front() {
         return list.getFirst();
+    }
+
+    public T rear() {
+        return list.getLast();
     }
 
     public void print() {
         list.printList();
+    }
+
+    public boolean isEmpty() {
+        return (size == 0) ? true: false;
     }
 }

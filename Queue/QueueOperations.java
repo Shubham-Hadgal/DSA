@@ -11,14 +11,20 @@ public class QueueOperations {
 
         q.print();
 
-        System.out.println(q.peek());
+        System.out.println(q.front());
         System.out.println(q.size());
+        System.out.println(q.isEmpty());
 
         q.remove();
         q.remove();
 
         q.print();
         System.out.println(q.size());
+
+        q.remove();
+        q.remove();
+
+        System.out.println(q.isEmpty());
 
     }
 }

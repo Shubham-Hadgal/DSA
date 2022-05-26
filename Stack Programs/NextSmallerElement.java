@@ -6,7 +6,7 @@
             1. if st.peek() < iparr[i] -> set ith element to st.peek()
                 and push arr[i] to stack.
             2. else pop elements from stack until st.peek() > arr[i]
-                when we found smaller element puth that in ith index and push arr[i] in stack
+                when we found smaller element put that in ith index and push arr[i] in stack
 
 */
 
