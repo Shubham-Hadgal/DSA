@@ -1,3 +1,9 @@
+/*
+    ! InOrder -> LNR
+    ! PreOrder -> NLR
+    ! PostOrder -> LRN
+ */
+
 import java.util.*;
 
 // ip: 10 20 6 -1 -1 2 -1 -1 5 11 -1 -1 -1
@@ -21,9 +27,43 @@ public class BinaryTreeOps {
     public static void main(String[] args) {
         BNode root = buildTree(null);
 
-        levelOrderTraversal(root);
+        // levelOrderTraversal(root);
 
-        reverseLevelOrderTraversal(root);
+        // reverseLevelOrderTraversal(root);
+
+        inOrder(root);
+        System.out.println();
+        preOrder(root);
+        System.out.println();
+        postOrder(root);
+    }
+
+    // InOrder Traversal
+    public static void inOrder(BNode root) {
+
+        if(root == null) return;
+
+        inOrder(root.left);
+        System.out.print(root.data+" ");
+        inOrder(root.right);
+    }
+
+    // PreOrder Traversal
+    public static void preOrder(BNode root) {
+        if(root == null) return;
+
+        System.out.print(root.data+" ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    // PostOrder Traversal
+    public static void postOrder(BNode root) {
+        if(root == null) return;
+
+        postOrder(root.right);
+        postOrder(root.left);
+        System.out.print(root.data+" ");
     }
 
     // reverse level order tarversal
