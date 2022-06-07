@@ -1,0 +1,126 @@
+import java.util.*;
+
+// ip: 10 20 6 -1 -1 2 -1 -1 5 11 -1 -1 -1
+
+// Binary Tree Node BluePrint
+class BNode {
+    int data;
+    BNode left;
+    BNode right;
+
+    BNode(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+
+public class BinaryTreeOps {
+    
+    private static  Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        BNode root = buildTree(null);
+
+        levelOrderTraversal(root);
+
+        reverseLevelOrderTraversal(root);
+    }
+
+    // reverse level order tarversal
+    public static void reverseLevelOrderTraversal(BNode root) {
+
+        if(root == null) return;
+
+        Queue<BNode> q = new LinkedList<>();
+        Stack<BNode> st = new Stack<>();
+
+        q.offer(root);
+        q.offer(null);
+
+        st.push(root);
+        st.push(null);
+
+        while(!q.isEmpty()) {
+            BNode temp = q.poll();
+
+            if(temp == null) {
+                if(!q.isEmpty()) {
+                    q.offer(null);
+                    st.push(null);
+                }
+            } else {
+                // first put right node as we pop from stack we will get left most node first
+                if(temp.right != null) {
+                    q.offer(temp.right);
+                    st.push(temp.right);
+                }
+                if(temp.left != null) {
+                    q.offer(temp.left);
+                    st.push(temp.left);
+                }
+            }
+        }
+
+        while(!st.isEmpty()) {
+            BNode nd = st.pop();
+            if(nd == null) {
+                System.out.println();
+            } else {
+                System.out.print(nd.data+" ");
+            }
+        }
+
+    }
+
+    // level order traversal for binary tree also known as BFS
+    public static void levelOrderTraversal(BNode root) {
+        if(root == null) return;
+
+        Queue<BNode> q = new LinkedList<>();
+
+        q.offer(root);
+        q.offer(null);
+
+        while(!q.isEmpty()) {
+            BNode temp = q.poll();
+
+            if(temp == null) {
+                System.out.println();
+                if(!q.isEmpty()) {
+                    q.offer(null);
+                }
+                
+            } else {
+                System.out.print(temp.data+" ");
+                if(temp.left != null) {
+                    q.offer(temp.left);
+                }
+                if(temp.right != null) {
+                    q.offer(temp.right);
+                }
+            }
+        }
+    }
+
+    public static BNode buildTree(BNode root) {
+
+        System.out.println("Enter data");
+        int x = sc.nextInt();
+
+        root = new BNode(x);
+
+        if(x == -1) {
+            return null;
+        }
+
+        System.out.println("Enter the left data for "+x);
+        BNode leftTree = buildTree(root.left);
+        System.out.println("Enter the right data for "+x);
+        BNode rightTree = buildTree(root.right);
+
+        root.left = leftTree;
+        root.right = rightTree;
+
+        return root;
+    }
+}
