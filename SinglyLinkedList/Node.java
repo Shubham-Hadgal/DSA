@@ -1,5 +1,5 @@
 // Node model
-public class Node<T> {
+class Node<T> {
     T data;
     Node<T> next;
     
