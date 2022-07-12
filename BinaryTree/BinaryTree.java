@@ -57,7 +57,7 @@ public class BinaryTree {
     }
 
     // reverse level order tarversal
-    void reverseLevelOrderTraversal(BNode root) {
+    void reverseLevelOrderTraversal() {
 
         // base case or edge case
         if(root == null) return;
@@ -106,7 +106,7 @@ public class BinaryTree {
     }
 
     // level order traversal for binary tree also known as BFS
-    void levelOrderTraversal(BNode root) {
+    void levelOrderTraversal() {
 
         // edge or base case
         if(root == null) return;

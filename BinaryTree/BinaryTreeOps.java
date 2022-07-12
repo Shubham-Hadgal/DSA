@@ -22,9 +22,9 @@ public class BinaryTreeOps {
         // bTree.root.left.left = new BNode(60);
         // bTree.root.left.left.right = new BNode(90);
 
-        bTree.levelOrderTraversal(bTree.getRoot());
+        bTree.levelOrderTraversal();
 
-        // reverseLevelOrderTraversal(root);
+        bTree.reverseLevelOrderTraversal();
 
         // inOrder(root);
         // System.out.println();
