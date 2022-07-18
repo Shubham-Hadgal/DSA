@@ -29,6 +29,7 @@ public class FindTheElementThatAppearOnce {
 
         int ans = findTheElementThatAppearOnce(arr);
         System.out.println(ans);
+        sc.close();
     }
 
     private static int findTheElementThatAppearOnce(int[] arr) {
