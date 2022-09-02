@@ -3,33 +3,24 @@ import java.util.*;
 public class Temp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        List<Long> arr = new ArrayList<>();
+        String s = sc.nextLine();
 
-        for(int i = 0 ; i < n; i++) {
-            arr.add(sc.nextLong());
-        }
-
-        int n2 = sc.nextInt();
-        List<Long> eat = new ArrayList<>();
-
-        for(int i = 0 ; i < n2; i++) {
-            eat.add(sc.nextLong());
-        }
-
-        long ans = findMax(arr, eat);
+        int ans = getMax(s);
         System.out.println(ans);
         sc.close();
     }
 
-    public static long findMax(List<Long> arr, List<Long> eat) {
-        long max = Integer.MIN_VALUE;
+    public static int getMax(String s) {
+        Map<Character, Integer> map = new HashMap<>();
 
-        for(int i = 0 ; i < arr.size(); i++) {
-            if(arr.get(i) + eat.get(i) > max) {
-                max = arr.get(i) + eat.get(i);
+        for(int i = 0 ;i < s.length(); i++) {
+            if(map.containsKey(s.charAt(i))) {
+                map.put(s.charAt(i), map.get(s.charAt(i))+1);
+            } else {
+                map.put(s.charAt(i), 1);
             }
         }
-        return max;
+        return map.size();
+
     }
 }
