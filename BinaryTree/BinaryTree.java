@@ -1,4 +1,5 @@
 import java.util.*;
+// Implemented only for Integer
 
 public class BinaryTree {
 
@@ -56,7 +57,27 @@ public class BinaryTree {
         System.out.print(root.data+" ");
     }
 
-    // reverse level order tarversal
+    // ! reverse level order tarversal
+
+    /*           
+                    !INPUT
+    *                  12
+    *                /    \
+    *              10      20
+    *             /  \    /
+    *            5    8  6
+    *                /
+    *              9 
+    * 
+                    !OUTPUT
+
+    *                9
+    *                5 8 6
+    *                10 20
+    *                12
+    * 
+    */
+
     void reverseLevelOrderTraversal() {
 
         // base case or edge case
