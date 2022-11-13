@@ -1,7 +1,3 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.Test;
-
 /*
     *Algorithm
     1. store the stack top element in variable and pop element from stack.
