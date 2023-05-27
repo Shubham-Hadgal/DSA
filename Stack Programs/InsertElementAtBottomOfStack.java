@@ -6,6 +6,10 @@
     4. if stack is empty push x element in stack and return;
 */
 
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
 public class InsertElementAtBottomOfStack {
     public static void main(String[] args) {
         Stacks<Integer> st = new Stacks<>();
